@@ -1,0 +1,38 @@
+<h3 style="text-align:center;">Create Employee</h3>
+<div class="container" style="width: 400px;">
+  <form (ngSubmit)="onSubmit()" [formGroup]="empForm">
+    <div class="form-group">
+      <label for="name">Name</label>
+	  <input type="text" class="form-control" required formControlName="fullName">
+		  <div *ngIf="submitted && f.fullName.errors">
+		  <div class="alert alert-warning" *ngIf="f.fullName.errors.required">Name is Required</div>
+		  </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Designation</label>
+      <input type="text" class="form-control" required formControlName="designation">
+	  		  <div *ngIf="submitted && f.designation.errors">
+		  <div class="alert alert-warning" *ngIf="f.designation.errors.required">Designation is Required</div>
+		  </div>
+    </div>
+
+    <div class="form-group">
+      <label for="name">Salary</label>
+      <input type="text" class="form-control" required formControlName="salary">
+	  		  <div *ngIf="submitted && f.salary.errors">
+		  <div class="alert alert-warning" *ngIf="f.salary.errors.required">Salary is Required</div>
+		  </div>
+    </div>
+	
+	<div class="form-group">
+      <label for="name">Joining Date</label>
+      <input type="date" class="form-control" required formControlName="joiningDate">
+	  		  <div *ngIf="submitted && f.joiningDate.errors">
+		  <div class="alert alert-warning" *ngIf="f.joiningDate.errors.required">Joining Date is Required</div>
+		  </div>
+    </div>
+	<!-- <div class="alert alert-warning" *ngIf="employee.fullName.errors.required">Enter valid Joining Date</div> -->
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
